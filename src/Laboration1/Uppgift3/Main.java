@@ -5,7 +5,7 @@ public class Main {
         DoubleLinkedCircularList dcl = new DoubleLinkedCircularList();
         System.out.println("Size: " +dcl.size);
 
-        for(int i = 1; i <= 100; i++)
+        for(int i = 1; i <= 10; i++)
             dcl.enqueue(i);
 
         System.out.println("First: " +dcl.getFirst());

@@ -24,10 +24,11 @@ Questions to answer in the seminar, one point per question:
 
 In the following "Show" means that you should be able to project the code/files you have uploaded in Canvas from Canvas from your own computer or the teachers. I.e. you cannot use another file than the one you have uploaded in Canvas. You should be able to explain your code in detail and your design choices.
 
-Show and explain the code from assignment 1. Is it easier to implement this function recursively or iteratively? Are there other pros/cons of the two approaches?
-Show and explain the code from assignment 2, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
-Show and explain the code from assignment 3, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
-Show and explain the code from assignment 4, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
-Show and explain the code from assignment 5, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
-Show and explain the code from assignment 6, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
-Show and explain the code from assignment 7, how your tests work and why your tests are sufficient to validate the correctness of your implementation.
+Show and explain the code from assignment 
+1. Is it easier to implement this function recursively or iteratively? Are there other pros/cons of the two approaches?
+2. how your tests work and why your tests are sufficient to validate the correctness of your implementation. 
+3. how your tests work and why your tests are sufficient to validate the correctness of your implementation.
+4. how your tests work and why your tests are sufficient to validate the correctness of your implementation.
+5. how your tests work and why your tests are sufficient to validate the correctness of your implementation.
+6. how your tests work and why your tests are sufficient to validate the correctness of your implementation.
+7. how your tests work and why your tests are sufficient to validate the correctness of your implementation.
