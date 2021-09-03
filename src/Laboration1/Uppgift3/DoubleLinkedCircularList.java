@@ -1,35 +1,38 @@
 package Laboration1.Uppgift3;
 
 
+import java.util.NoSuchElementException;
+
 /**
  * TO DO
- * En generisk kö, innebär det att man ska använda sig av items istället för int under data?
+ *
  * implementera: You should print the content of the list after each insertion/deletion of an element.
+ * Se till att den fungerar för crappy input
+ * skapa test
  *
  */
-public class DoubleLinkedCircularList {
-    Node last;
+public class DoubleLinkedCircularList<T> {
+    Node<T> last;
     int size;
-    Node first;
+    Node<T> first;
 
-    public class Node{
-        private Node prev;
-        private int data;
-        private Node next;
+    public class Node<T>{
+        private Node<T> prev, next;
+        private T data;
 
         public Node(){
-            data = 0;
+            data = null;
             prev = null;
             next = null;
         }
 
-        public Node(Node prev, int data, Node next) {
+        public Node(Node<T> prev, T data, Node<T> next) {
             this.prev = prev;
             this.data = data;
             this.next = next;
         }
 
-        public Node(int data) {
+        public Node(T data) {
             this.data = data;
         }
 
@@ -61,11 +64,11 @@ public class DoubleLinkedCircularList {
      *
      * @param data  Data for the new member to hold
      */
-    public void enqueue(int data){
+    public void enqueue(T data){
         if(isEmpty()){
-            first = last = new Node(first, data, last);
+            first = last = new Node<T>(first, data, last);
         }else{
-            first.prev = new Node(first.prev, data, first);
+            first.prev = new Node<T>(first.prev, data, first);
             first = first.prev;
             first.prev = last;
             last.next = first;
@@ -74,19 +77,21 @@ public class DoubleLinkedCircularList {
         size++;
     }
 
-    public int dequeue(){
-        int data = last.data;
-
-        last = last.prev;
-        first.prev = last;
-        last.next = first;
-
-
+    public T dequeue(){
+        T data = last.data;
+        if(size == 1){
+            first = last = null;
+        }else {
+            last = last.prev;
+            first.prev = last;
+            last.next = first;
+        }
         size--;
         return data;
     }
 
     public String printQueue(){
+        if(isEmpty()) throw new NoSuchElementException("Queue is empty");
         Node cnt;
         StringBuilder sb = new StringBuilder();
         for(cnt = first; cnt != last; cnt = cnt.next) {

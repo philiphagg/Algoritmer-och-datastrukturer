@@ -15,7 +15,15 @@ public class Main {
         System.out.println("Removed Item: "+dcl.dequeue()+ ", Size: " +dcl.size);
         System.out.println(dcl.printQueue());
         System.out.println("Removed Item: "+dcl.dequeue()+ ", Size: " +dcl.size);
+        dcl.enqueue('A');
+        dcl.enqueue('B');
+        System.out.println(dcl.size);
+
         System.out.println(dcl.printQueue());
+        for(int i = 0; i < 11; i++){
+            dcl.dequeue();
+            System.out.println(dcl.printQueue());
+        }
 
 
 
