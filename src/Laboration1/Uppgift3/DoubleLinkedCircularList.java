@@ -74,6 +74,18 @@ public class DoubleLinkedCircularList {
         size++;
     }
 
+    public int dequeue(){
+        int data = last.data;
+
+        last = last.prev;
+        first.prev = last;
+        last.next = first;
+
+
+        size--;
+        return data;
+    }
+
     public String printQueue(){
         Node cnt;
         StringBuilder sb = new StringBuilder();

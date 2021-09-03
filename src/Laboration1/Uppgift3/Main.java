@@ -11,6 +11,13 @@ public class Main {
         System.out.println("First: " +dcl.getFirst());
         System.out.println("Last: " +dcl.getLast());
         System.out.println("Size: " +dcl.size);
+        System.out.println(dcl.printQueue());
+        System.out.println("Removed Item: "+dcl.dequeue()+ ", Size: " +dcl.size);
+        System.out.println(dcl.printQueue());
+        System.out.println("Removed Item: "+dcl.dequeue()+ ", Size: " +dcl.size);
+        System.out.println(dcl.printQueue());
+
+
 
 
     }
