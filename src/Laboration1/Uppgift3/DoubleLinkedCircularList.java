@@ -3,14 +3,9 @@ package Laboration1.Uppgift3;
 
 import java.util.NoSuchElementException;
 
-/**
- * TO DO
- *
- * implementera: You should print the content of the list after each insertion/deletion of an element.
- * Se till att den fungerar för crappy input
- * skapa test
- *
- */
+
+    //TODO Se till att den fungerar för crappy input
+    //TODO Skapa tester
 public class DoubleLinkedCircularList<T> {
     Node<T> last;
     int size;
@@ -64,6 +59,7 @@ public class DoubleLinkedCircularList<T> {
      *
      * @param data  Data for the new member to hold
      */
+    //TODO: You should print the content of the list after each insertion/deletion of an element.
     public void enqueue(T data){
         if(isEmpty()){
             first = last = new Node<T>(first, data, last);
@@ -76,7 +72,7 @@ public class DoubleLinkedCircularList<T> {
         }
         size++;
     }
-
+    //TODO: You should print the content of the list after each insertion/deletion of an element.
     public T dequeue(){
         T data = last.data;
         if(size == 1){
@@ -92,14 +88,14 @@ public class DoubleLinkedCircularList<T> {
 
     public String printQueue(){
         if(isEmpty()) throw new NoSuchElementException("Queue is empty");
-        Node cnt;
+        Node current;
         StringBuilder sb = new StringBuilder();
-        for(cnt = first; cnt != last; cnt = cnt.next) {
+        for(current = first; current != last; current = current.next) {
             sb.append('[');
-            sb.append(cnt.data);
+            sb.append(current.data);
             sb.append("], ");
         }
-        sb.append("["+cnt.data+"]");
+        sb.append("["+current.data+"]");
 
         return sb.toString();
 

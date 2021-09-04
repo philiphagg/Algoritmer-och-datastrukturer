@@ -4,7 +4,8 @@ public class Stack {
     public Node first;
     public int size;
 
-
+    //TODO: se till att stack fungerar med crappy inputs
+    // TODO: skapa tester
     private class Node{
         private Node next;
         private char data;
