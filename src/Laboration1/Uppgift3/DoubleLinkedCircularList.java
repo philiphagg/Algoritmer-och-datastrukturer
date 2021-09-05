@@ -44,11 +44,11 @@ public class DoubleLinkedCircularList<T> {
     public boolean isEmpty(){
         return first == null;
     }
-    public Node getFirst(){
-        return first;
-    }
-    public Node getLast(){
+    public Node getFirstInQueue(){
         return last;
+    }
+    public Node getLastInQueue(){
+        return first;
     }
     public int getSize(){
         return size;
@@ -87,16 +87,19 @@ public class DoubleLinkedCircularList<T> {
     }
 
     public String printQueue(){
-        if(isEmpty()) throw new NoSuchElementException("Queue is empty");
-        Node current;
         StringBuilder sb = new StringBuilder();
-        for(current = first; current != last; current = current.next) {
-            sb.append('[');
-            sb.append(current.data);
-            sb.append("], ");
-        }
-        sb.append("["+current.data+"]");
+        if(isEmpty()) {
+            sb.append("[]");
+        }else {
+            Node current;
 
+            for (current = first; current != last; current = current.next) {
+                sb.append('[');
+                sb.append(current.data);
+                sb.append("], ");
+            }
+            sb.append("[" + current.data + "]");
+        }
         return sb.toString();
 
     }
