@@ -4,7 +4,7 @@ package Laboration1.Uppgift4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-//TODO 4. Implement a generic iterable circular linked list which allows the user to insert and remove elements to/from the front and back end of the queue. Be careful when designing the API. You should print the content of the list after each insertion/deletion of an element.
+
 public class CircularLinkedList<T> implements Iterable<T>  {
     private Node<T> last;
     private Node<T> first;
@@ -81,22 +81,36 @@ public class CircularLinkedList<T> implements Iterable<T>  {
 
 
     }
-    //TODO when list is zero and when list only has one element
+
     public T removeFirst(){
         T data = first.data;
-        first = first.next;
-        last.next = first;
-
-        size--;
+        if(isEmpty()) {
+            throw new NoSuchElementException("Cant remova element from an empty queue");
+        }
+        else if(size == 1) {
+            last = first = null;
+            size--;
+        }else {
+            first = first.next;
+            last.next = first;
+            size--;
+        }
         return data;
     }
-    //TODO Method that removes item last
+
     public T removeLast(){
-        T data = first.data;
-
-
-
-
+        if(isEmpty())
+            throw new NoSuchElementException("cant remove element from an empty queue");
+        T data = last.data;
+        if(size == 1){
+            last = first = null;
+        }else{
+            Node current = first;
+            while(current.next != last)
+                current = current.next;
+            last = current;
+            last.next = first;
+        }
         size--;
         return data;
     }
@@ -123,12 +137,12 @@ public class CircularLinkedList<T> implements Iterable<T>  {
     private class CircularLinkedListIterator implements Iterator<T>{
         private Node<T> current = first;
 
-        //TODO hasNext()
+
         @Override
         public boolean hasNext() {
             return current.next != last.next;
         }
-        //TODO Next()
+
         @Override
         public T next() {
             if(!hasNext())

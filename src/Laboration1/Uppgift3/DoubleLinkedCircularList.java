@@ -3,7 +3,7 @@ package Laboration1.Uppgift3;
 
 import java.util.NoSuchElementException;
 
-
+//TODO iterable betyder det att den ska implementera interface iterable?
     //TODO Se till att den fungerar för crappy input
     //TODO Skapa tester
 public class DoubleLinkedCircularList<T> {
