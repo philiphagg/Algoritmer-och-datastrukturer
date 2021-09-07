@@ -1,6 +1,6 @@
 package Laboration1.Uppgift5;
 
-//TODO 5. Implement a generalized queue which allows the user to remove the kth element from the queue. Assume the most recently added element has index 1. You should print the content of the list after each insertion/deletion of an element.
+
 //TODO TESTER
 public class GeneralQueue<T> {
     Node <T> last;
@@ -31,28 +31,27 @@ public class GeneralQueue<T> {
         if(isEmpty()){
             last = new Node<>();
             last.data = data;
-            size++;
         }else{
             Node<T> oldFirst = last;
             last = new Node<>();
             last.data = data;
             last.next = oldFirst;
-            size++;
         }
+        size++;
     }
-    //TODO
     public T dequeue(int k){
         if(k < 0 || k >= size) throw new IllegalArgumentException();
         int i;
         Node indexNode;
-
-            for(i = 0, indexNode = last; i != k; i++){
-
+            for(i = 1, indexNode = last; i != k - 1; i++){
+                indexNode = indexNode.next;
             }
+        T data = (T) indexNode.next.data;
+        indexNode.next = indexNode.next.next;
+        size--;
 
 
-
-        return ;
+        return data;
     }
 
     public String printQueue(){

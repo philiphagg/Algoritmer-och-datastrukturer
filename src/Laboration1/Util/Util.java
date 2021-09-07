@@ -5,10 +5,10 @@ import Laboration1.Uppgift4.CircularLinkedList;
 public class Util {
 
     public static void printInfoCll(CircularLinkedList cll){
-        if(!cll.isEmpty()) {
-            printListInfo(cll);
-        }else{
+        if(cll.isEmpty()) {
             printEmptyListInfo(cll);
+        }else{
+            printListInfo(cll);
         }
     }
 
