@@ -1,27 +1,55 @@
 package Laboration1.Uppgift3;
 
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-//TODO iterable betyder det att den ska implementera interface iterable?
     //TODO Se till att den fungerar för crappy input
     //TODO Skapa tester
-public class DoubleLinkedCircularList<T> {
+
+/**
+ * A linked list with reference on first element in list and last
+ * element in list.
+ *
+ *
+ * @param <T>   Generic parameters
+ */
+public class DoubleLinkedCircularList<T> implements Iterable<T> {
     Node<T> last;
     int size;
     Node<T> first;
 
-    public class Node<T>{
+    @Override
+    public Iterator<T> iterator() {
+        return new dlcIterator();
+    }
+    private class dlcIterator implements Iterator<T> {
+        private Node<T> current = first;
+
+        @Override
+        public boolean hasNext() {
+            return current != first.prev;
+        }
+
+        @Override
+        public T next() {
+            current = current.next;
+            return current.data;
+        }
+    }
+
+
+    private class Node<T>{
         private Node<T> prev, next;
         private T data;
 
-        public Node(){
+        private Node(){
             data = null;
             prev = null;
             next = null;
         }
 
-        public Node(Node<T> prev, T data, Node<T> next) {
+        private Node(Node<T> prev, T data, Node<T> next) {
             this.prev = prev;
             this.data = data;
             this.next = next;
@@ -59,7 +87,7 @@ public class DoubleLinkedCircularList<T> {
      *
      * @param data  Data for the new member to hold
      */
-    //TODO: You should print the content of the list after each insertion/deletion of an element.
+
     public void enqueue(T data){
         if(isEmpty()){
             first = last = new Node<T>(first, data, last);
@@ -68,11 +96,11 @@ public class DoubleLinkedCircularList<T> {
             first = first.prev;
             first.prev = last;
             last.next = first;
-
         }
+        printQueue();
         size++;
     }
-    //TODO: You should print the content of the list after each insertion/deletion of an element.
+
     public T dequeue(){
         T data = last.data;
         if(size == 1){
@@ -83,9 +111,28 @@ public class DoubleLinkedCircularList<T> {
             last.next = first;
         }
         size--;
+        printQueue();
         return data;
     }
 
+
+    public void printQueue() {
+        if (isEmpty()) {
+            System.out.print("[]");
+        } else {
+            Node current;
+            for (current = first; current != last; current = current.next) {
+                System.out.print('[');
+                System.out.print(current.data);
+                System.out.print("], ");
+
+            }
+            System.out.print("[" + current.data + "]");
+            System.out.println();
+        }
+    }
+
+    /*
     public String printQueue(){
         StringBuilder sb = new StringBuilder();
         if(isEmpty()) {
@@ -102,7 +149,7 @@ public class DoubleLinkedCircularList<T> {
         }
         return sb.toString();
 
-    }
+    }*/
 
 }
 

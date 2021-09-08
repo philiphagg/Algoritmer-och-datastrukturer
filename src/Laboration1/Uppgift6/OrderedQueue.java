@@ -46,14 +46,11 @@ public class OrderedQueue implements Iterable {
 
 
     public void enqueue(int data){
+
         if(isEmpty()){
             addFirstNode(data);
         }else if(size == 1){
-            if(data <= head.data){
-                addFirst(data);
-            }else{
-                addLast(data);
-            }
+            addFirstOrLast(data);
         }
         else{
             int indexOfInsertion = findIndex(data);
@@ -64,6 +61,14 @@ public class OrderedQueue implements Iterable {
             }
         }
         size++;
+    }
+
+    private void addFirstOrLast(int data) {
+        if(data <= head.data){
+            addFirst(data);
+        }else{
+            addLast(data);
+        }
     }
 
     private void addAtIndex(int data, int indexOfInsertion) {
