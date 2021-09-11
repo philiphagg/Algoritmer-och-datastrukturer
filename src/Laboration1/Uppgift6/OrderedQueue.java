@@ -4,6 +4,7 @@ package Laboration1.Uppgift6;
 import Laboration1.Uppgift5.GeneralQueue;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
 //TODO 6. Implement an ordered queue based on one of the implementations above. The elements stored in the queue should be integer values. The elements should be ordered at insertion so that all elements are stored in ascending order starting from when you insert the first element and in all following insertions. You should print the content of the list after each insertion/deletion of an element.
 public class OrderedQueue implements Iterable {
@@ -61,6 +62,31 @@ public class OrderedQueue implements Iterable {
             }
         }
         size++;
+    }
+    public int dequeue(int k){
+        if(k < 0 || k > size || isEmpty()) throw new IllegalArgumentException();
+        int i;
+        int data;
+        if(size == 1){
+            data = head.data;
+            head = null;
+            size--;
+            return data;
+        }if(k == 1){
+            data = head.data;
+            head = head.next;
+            size--;
+        }else {
+            Node indexNode;
+            for (i = 1, indexNode = head; i != k - 1; i++) {
+                indexNode = indexNode.next;
+            }
+            data = indexNode.next.data;
+            indexNode.next = indexNode.next.next;
+            size--;
+        }
+
+        return data;
     }
 
     private void addFirstOrLast(int data) {
@@ -131,21 +157,20 @@ public class OrderedQueue implements Iterable {
         }
     }
 
-    public String printQueue(){
-        StringBuilder sb = new StringBuilder();
+    public void printQueue(){
         if(isEmpty())
-            sb.append("[]");
+            System.out.println("[]");
         else{
             Node current;
             for (current = head; current.next != null; current = current.next) {
-                sb.append('[');
-                sb.append(current.data);
-                sb.append("], ");
+                System.out.print('[');
+                System.out.print(current.data);
+                System.out.print("], ");
             }
-            sb.append("[" + current.data + "]");
+            System.out.print("[" + current.data + "]");
         }
 
-        return sb.toString();
+
     }
 
     private class OrderedQueueIterator implements Iterator {
@@ -162,6 +187,38 @@ public class OrderedQueue implements Iterable {
         }
         public boolean comparisson(int data){
             return current.data < data;
+        }
+    }
+
+    public static void main(String[] args) {
+        OrderedQueue queue = new OrderedQueue();
+        Scanner s = new Scanner(System.in);
+        while(true){
+            System.out.println("e: enqueue d: dequeue s: size quit: quit");
+            String input = s.nextLine();
+            switch (input){
+                case("e"):
+                    System.out.print("enter a value: ");
+                    queue.enqueue(Integer.parseInt(s.next()));
+                    queue.printQueue();
+                    System.out.println();
+                    s.nextLine();
+                    break;
+                case("d"):
+                    System.out.print("enter index: ");
+                    queue.dequeue(Integer.parseInt(s.next()));
+                    queue.printQueue();
+                    System.out.println();
+                    s.nextLine();
+                    break;
+                case("s"):
+                    System.out.println(queue.size);
+                    break;
+                case("quit"):
+                    System.exit(0);
+                    break;
+            }
+
         }
     }
 }

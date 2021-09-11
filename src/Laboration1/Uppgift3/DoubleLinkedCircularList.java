@@ -21,6 +21,7 @@ public class DoubleLinkedCircularList<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
+
         return new dlcIterator();
     }
     private class dlcIterator implements Iterator<T> {
@@ -131,25 +132,6 @@ public class DoubleLinkedCircularList<T> implements Iterable<T> {
             System.out.println();
         }
     }
-
-    /*
-    public String printQueue(){
-        StringBuilder sb = new StringBuilder();
-        if(isEmpty()) {
-            sb.append("[]");
-        }else {
-            Node current;
-
-            for (current = first; current != last; current = current.next) {
-                sb.append('[');
-                sb.append(current.data);
-                sb.append("], ");
-            }
-            sb.append("[" + current.data + "]");
-        }
-        return sb.toString();
-
-    }*/
 
 }
 

@@ -5,13 +5,17 @@ import static Laboration1.Util.Util.printInfoCll;
 
 class Main {
     public static void main(String[] args) {
-        CircularLinkedList cll = new CircularLinkedList();
-        printCll(cll);
+        CircularLinkedList<Integer> cll = new CircularLinkedList();
+        //printCll(cll);
         addTenItemsToFront(cll);
-        addTenItemsToBack(cll);
-        emptyQueueFront(cll);
-        addTenItemsToBack(cll);
-        emptyQueueBack(cll);
+        //addTenItemsToBack(cll);
+        //emptyQueueFront(cll);
+        //addTenItemsToBack(cll);
+        //emptyQueueBack(cll);
+
+        for(Integer c : cll){
+            System.out.print(c);
+        }
 
 
     }

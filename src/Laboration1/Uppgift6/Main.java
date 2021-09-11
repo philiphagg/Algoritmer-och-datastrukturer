@@ -3,6 +3,7 @@ package Laboration1.Uppgift6;
 public class Main {
 
     public static void main(String[] args) {
+        /*
         OrderedQueue OQ = new OrderedQueue();
         System.out.println(OQ.printQueue());
 
@@ -13,13 +14,12 @@ public class Main {
         }
         addItem(OQ, 10);
 
-
-
-
     }
 
     private static void addItem(OrderedQueue OQ, int data) {
         OQ.enqueue(data);
         System.out.println(OQ.printQueue());
+    */
     }
+
 }

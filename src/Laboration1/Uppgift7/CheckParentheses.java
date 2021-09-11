@@ -1,29 +1,55 @@
 package Laboration1.Uppgift7;
 
+
+import edu.princeton.cs.algs4.Stack;
+
+import java.util.Scanner;
+
 //TODO calculate memory and time complexity for the algorithm
 public class CheckParentheses {
-    int i;
-    int j;
-    int k;
 
-    public CheckParentheses() {
-        this.i = 0;
-        this.j = 0;
-        this.k = 0;
+    public static void main(String[] args) {
+        Stack<Character> stack = new Stack<Character>();
+        /*
+        Scanner s = new Scanner(System.in);
+        String parentheses = s.nextLine();
+        */
+        String parentheses = "(({)[)]}";
+        System.out.println(check(parentheses));
+
+
     }
-
-    public boolean countInput(String s){
-        for(int counter = 0; counter < s.length(); counter++){
-            if(s.charAt(counter) == 40 || s.charAt(counter) == 41)
-                this.i++;
-            if(s.charAt(counter) == 91 || s.charAt(counter) == 93)
-                this.j++;
-            if(s.charAt(counter) == 123 || s.charAt(counter) == 125)
-                this.k++;
+    public static boolean check(String string){
+        Stack<Character> stack = new Stack<Character>();
+        char ch = 0;
+        if(empty(string) || oddLength(string))
+            return false;
+        for(int i = 0; i < string.length(); i++){
+            if(string.charAt(i) == '(' || string.charAt(i) == '[' || string.charAt(i) == '{')
+                stack.push(string.charAt(i));
+            else{
+                if(!stack.isEmpty())
+                    ch = stack.pop();
+                if((        (ch == '(' && string.charAt(i) == ')')
+                        || (ch == '[' && string.charAt(i) == ']')
+                        || (ch == '{' && string.charAt(i) == '}'))){
+                    ch = 0;
+                    continue;
+                }
+                else
+                    return false;
+            }
         }
-        return isEven();
+        return stack.isEmpty();
     }
-    public boolean isEven (){
-        return (i & 1) == 0 && (j & 1) == 0 && (k & 1) == 0;
+
+    private static boolean oddLength(String string) {
+        return string.length() % 2 != 0;
     }
+
+    private static boolean empty(String string) {
+        return string == "";
+    }
+
+
 }
