@@ -90,12 +90,6 @@ public class GeneralQueue<T> {
         GeneralQueue GQ = new GeneralQueue();
         Scanner s = new Scanner(System.in);
 
-
-
-
-
-
-
         while(true){
             System.out.println("e: enqueue d: dequeue s: size quit: quit");
             String input = s.nextLine();

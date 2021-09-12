@@ -4,8 +4,9 @@ package Laboration1.Uppgift3;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-    //TODO Se till att den fungerar för crappy input
-    //TODO Skapa tester
+/**
+ * Den här uppgiften blev inte rätt implementerad. Det finns en ny fil som är korrekt
+ */
 
 /**
  * A linked list with reference on first element in list and last

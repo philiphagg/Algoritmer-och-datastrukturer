@@ -5,7 +5,10 @@ import edu.princeton.cs.algs4.Stack;
 
 import java.util.Scanner;
 
-//TODO calculate memory and time complexity for the algorithm
+/**
+ * Time complexity for the worst case: n
+ * Memory complexity for for the worst case n/2
+ */
 public class CheckParentheses {
 
     public static void main(String[] args) {
