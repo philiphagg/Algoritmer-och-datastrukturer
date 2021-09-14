@@ -1,0 +1,28 @@
+Uppgift 1
+Uppgiftens syfte är att vända på en sträng. Här används en stack för att vända på strängen. via getchar
+så pushar vi till stacken och popar dess innehåll via putchar.
+
+Uppgift 2
+Uppgiften är tvungande till att använda stack
+
+Uppgift 3
+Uppgiften är tvingande till att använda en cirkulär dubbellänkad lista
+
+Uppgift 4
+Jag valde att implementera detta med en cirkulär linked list som bara har en pekare till nästa element
+då föregående uppgift användes en dubbellänkad lista. Här blev en rolig prövning att utföra en liknande uppgift
+på ett annat sätt. Vi kan enbart iterera åt ett håll och förlorar tid. Den tiden vinner vi i minneseffektivitet.
+
+Uppgift 5
+Jag valde att arbeta med en single linked list till uppgiften. Det var för att jag ville träna på att arbeta med
+denna typen av listor då jag anser att de är lite "svårare" att implementera och ville träna på det.
+Det mest fördelaktiga i det här fallet hade varit en dubbellänkad lista. Detta ger ytterligare funktionalitet
+för att eliminera element på plats k. Då kan vi jämföra det mot vår size. Om k > size/2, då kan vi iterera
+från andra hållet och hitta elementen snabbare.  om k < size/2 kan vi iterera som vanligt och på så sätt
+får vi en bättre tidskomplexitet men sämre minneskomplexitet. ( då det är minst dubbelt så många referenser ).
+
+Uppgift 6
+Eftersom vi inte kan kontrollera vad användaren vill lägga in för siffra. En fördel hade varit att använda en
+doubly linked circular list. Då detta innebär att vi alltid kan välja en kortare väg och i sämsta fall få
+ett bättre resultat. Jag valde att använda mig utav en singly linked list då jag tyckte det blev en roligare
+utmaning att arbeta med.

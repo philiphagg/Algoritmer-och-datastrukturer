@@ -1,9 +1,11 @@
 package Laboration1.Uppgift5;
 
 
+import Laboration1.Uppgift6.OrderedQueue;
+
 import java.util.Scanner;
 
-//TODO TESTER
+
 public class GeneralQueue<T> {
     Node <T> last;
     int size;
@@ -68,22 +70,21 @@ public class GeneralQueue<T> {
         return data;
     }
 
-    public void printQueue(){
-        if(isEmpty()) {
-            System.out.println("[]");
-        }
-        else {
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        if(isEmpty())
+            sb.append("[]");
+        else{
             Node current;
             for (current = last; current.next != null; current = current.next) {
-                System.out.print('[');
-                System.out.print(current.data);
-                System.out.print("], ");
+                sb.append('[');
+                sb.append(current.data);
+                sb.append("], ");
             }
-            System.out.print("[" + current.data + "]");
-
+            sb.append("[" + current.data + "]");
         }
 
-
+        return sb.toString();
     }
 
     public static void main(String[] args) {
@@ -97,14 +98,14 @@ public class GeneralQueue<T> {
                 case("e"):
                     System.out.print("enter a value: ");
                     GQ.enqueue(s.next());
-                    GQ.printQueue();
+                    System.out.println(GQ);
                     System.out.println();
                     s.nextLine();
                     break;
                 case("d"):
                     System.out.print("enter index: ");
                     GQ.dequeue(Integer.parseInt(s.next()));
-                    GQ.printQueue();
+                    System.out.println(GQ);
                     System.out.println();
                     s.nextLine();
                     break;

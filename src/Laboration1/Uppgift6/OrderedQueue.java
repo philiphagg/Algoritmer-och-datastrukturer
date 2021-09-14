@@ -4,6 +4,7 @@ package Laboration1.Uppgift6;
 import Laboration1.Uppgift5.GeneralQueue;
 
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -157,20 +158,21 @@ public class OrderedQueue implements Iterable {
         }
     }
 
-    public void printQueue(){
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
         if(isEmpty())
-            System.out.println("[]");
+            sb.append("[]");
         else{
             Node current;
             for (current = head; current.next != null; current = current.next) {
-                System.out.print('[');
-                System.out.print(current.data);
-                System.out.print("], ");
+                sb.append('[');
+                sb.append(current.data);
+                sb.append("], ");
             }
-            System.out.print("[" + current.data + "]");
+            sb.append("[" + current.data + "]");
         }
 
-
+        return sb.toString();
     }
 
     private class OrderedQueueIterator implements Iterator {
@@ -193,6 +195,11 @@ public class OrderedQueue implements Iterable {
     public static void main(String[] args) {
         OrderedQueue queue = new OrderedQueue();
         Scanner s = new Scanner(System.in);
+        Random ran = new Random();
+
+
+        System.out.println(queue);
+
         while(true){
             System.out.println("e: enqueue d: dequeue s: size quit: quit");
             String input = s.nextLine();
@@ -200,14 +207,14 @@ public class OrderedQueue implements Iterable {
                 case("e"):
                     System.out.print("enter a value: ");
                     queue.enqueue(Integer.parseInt(s.next()));
-                    queue.printQueue();
+                    System.out.println(queue);
                     System.out.println();
                     s.nextLine();
                     break;
                 case("d"):
                     System.out.print("enter index: ");
                     queue.dequeue(Integer.parseInt(s.next()));
-                    queue.printQueue();
+                    System.out.println(queue);
                     System.out.println();
                     s.nextLine();
                     break;

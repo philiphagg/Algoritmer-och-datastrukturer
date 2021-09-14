@@ -96,25 +96,27 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
         return data;
     }
 
-    public void printQueue() {
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
         if (isEmpty())
-            System.out.print("[]");
+            sb.append("[]");
         else {
             Node<T> current;
             int i = 0;
-            for (current = head.next; current.next != null; current = current.next) {
+            for (current = head.next; current.next != head /*null*/; current = current.next) {
                 if(++i < size) {
-                    System.out.print('[');
-                    System.out.print(current.data);
-                    System.out.print("], ");
+                    sb.append('[');
+                    sb.append(current.data);
+                    sb.append("], ");
 
                 }else{
                     break;
                 }
             }
-            System.out.print("[" + current.data + "]");
-            System.out.println();
+            sb.append("[" + current.data + "]");
+
         }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
@@ -139,13 +141,13 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
                 case("e"):
                     System.out.print("enter a value: ");
                     dlc.enqueue(s.next());
-                    dlc.printQueue();
+                    System.out.println(dlc);
                     System.out.println();
                     s.nextLine();
                     break;
                 case("d"):
                     dlc.dequeue();
-                    dlc.printQueue();
+                    System.out.println(dlc);
                     System.out.println();
                     break;
                 case("s"):
