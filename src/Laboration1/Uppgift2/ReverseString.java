@@ -1,7 +1,9 @@
 package Laboration1.Uppgift2;
 import java.util.Scanner;
 
-
+/**
+ * Class responsible for scanning user input and reverse it in system.out
+ */
 class ReverseString {
     public static void main(String[] args) {
         Stack stack = new Stack();
@@ -16,6 +18,12 @@ class ReverseString {
         //iterativeMethod(stack);
         recursiveMethod(stack);
     }
+
+    /**
+     * Method reversing user input using an iterative approach
+     *
+     * @param stack stack that contains user input
+     */
     public static void iterativeMethod(Stack stack){
         StringBuilder sb = new StringBuilder();
         while(!stack.isEmpty()){
@@ -25,6 +33,12 @@ class ReverseString {
         }
         System.out.println(sb);
     }
+
+    /**
+     * Method reversing user input using a recursive approach
+     *
+     * @param stack stack that contains user input
+     */
     public static void recursiveMethod(Stack stack){
         StringBuilder sb = new StringBuilder();
         if(!stack.isEmpty()){

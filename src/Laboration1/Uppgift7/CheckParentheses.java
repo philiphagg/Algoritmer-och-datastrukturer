@@ -17,11 +17,16 @@ public class CheckParentheses {
         Scanner s = new Scanner(System.in);
         String parentheses = s.nextLine();
         */
-        String parentheses = "(({)[)]}";
+        String parentheses = "";
         System.out.println(check(parentheses));
 
-
     }
+
+    /**
+     * checks praenthesis are balanced
+     * @param string string thas shall be checked
+     * @return if paranthesis are balanced
+     */
     public static boolean check(String string){
         Stack<Character> stack = new Stack<Character>();
         char ch = 0;

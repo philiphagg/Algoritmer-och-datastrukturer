@@ -4,6 +4,12 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+
+/**
+ * class represents a circular singly linked list.
+ *
+ * @param <T> for generic purposes
+ */
 public class CircularSinglyLinkedList<T> implements Iterable<T> {
     private Node<T> head;
     private int size;
@@ -13,10 +19,18 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
         private T data;
     }
 
+    /**
+     * constructor for object creation.
+     */
     public CircularSinglyLinkedList (){
         this.head = new Node<>();
         this.size = 0;
     }
+
+    /**
+     *
+     * @return if the queue is empty
+     */
     public boolean isEmpty() {
         return size == 0;
     }
@@ -36,6 +50,11 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
         size++;
     }
 
+    /**
+     * adds element to the end of the list
+     *
+     * @param data that should be added.
+     */
     public void addLast(T data){
         CircularSinglyLinkedListIterator cli = new CircularSinglyLinkedListIterator();
         if(isEmpty()){
@@ -56,6 +75,12 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
         size++;
 
     }
+
+    /**
+     * Removes the first element from the queue
+     *
+     * @return element that was removed
+     */
     public T removeFirst(){
         T data = head.next.data;
         if(isEmpty())
@@ -70,6 +95,12 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
 
         return data;
     }
+
+    /**
+     * removes the element from the back of the queue
+     *
+     * @return  element that was removed
+     */
     public T removeLast(){
         T data;
         if(isEmpty())
@@ -92,6 +123,11 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
         return data;
     }
 
+    /**
+     * convers the list to a string representation
+     *
+     * @return the string representation
+     */
     public String toString(){
         CircularSinglyLinkedListIterator cli = new CircularSinglyLinkedListIterator();
         StringBuilder sb = new StringBuilder();
@@ -109,6 +145,10 @@ public class CircularSinglyLinkedList<T> implements Iterable<T> {
         return sb.toString();
     }
 
+    /**
+     * Iterator
+     * @return custom made iterator
+     */
     @Override
     public Iterator iterator() {
         return new CircularSinglyLinkedListIterator();

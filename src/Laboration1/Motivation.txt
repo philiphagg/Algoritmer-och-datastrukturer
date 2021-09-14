@@ -1,3 +1,10 @@
+------ Read me ------>
+When executin each file:
+remove package line from the start of each file (java)
+<------ Read me ------
+
+
+
 Uppgift 1
 Uppgiftens syfte är att vända på en sträng. Här används en stack för att vända på strängen. via getchar
 så pushar vi till stacken och popar dess innehåll via putchar.

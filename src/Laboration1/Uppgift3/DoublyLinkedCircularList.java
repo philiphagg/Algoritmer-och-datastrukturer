@@ -3,10 +3,22 @@ package Laboration1.Uppgift3;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Class represents a circular doubly linked list.
+ * an empty node as sentinel wich keeps track of the head and tail of the list.
+ *
+ *
+ * @param <T> for generic purposes
+ */
 public class DoublyLinkedCircularList<T> implements Iterable<T> {
     Node<T> head;
     int size;
 
+    /**
+     * Iterator class responsible for iterable purposes.
+     *
+     * @return custom made iterator
+     */
     @Override
     public Iterator<T> iterator() {
         return new dlcIterator();
@@ -43,7 +55,7 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
             this.next = next;
         }
 
-        public Node(T data) {
+        private Node(T data) {
             this.data = data;
         }
 
@@ -52,14 +64,27 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
         }
     }
 
+    /**
+     * constructor for object creation
+     */
     public DoublyLinkedCircularList() {
         this.head = new Node<T>();
         this.size = 0;
     }
+
+    /**
+     * checks if list is empty
+     * @return  if list contains elements
+     */
     public boolean isEmpty(){
         return size == 0;
     }
 
+    /**
+     * adds a node to the list
+     *
+     * @param data  the data that should be added to the node
+     */
     public void enqueue(T data){
         if(isEmpty()){
             Node<T> newNode = new Node<T>();
@@ -80,6 +105,12 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
 
     }
 
+    /**
+     * removes a element from queue (FIFO), throws an exception user
+     * dequeues an empty queue.
+     *
+     * @return element that was removed
+     */
     public T dequeue(){
         if(isEmpty())throw new IllegalArgumentException("Cant dequeue an empty queue");
         T data = head.prev.data;
@@ -96,6 +127,11 @@ public class DoublyLinkedCircularList<T> implements Iterable<T> {
         return data;
     }
 
+    /**
+     * Convers the list into a string representation
+     *
+     * @return  returns a string representation of the list.
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (isEmpty())

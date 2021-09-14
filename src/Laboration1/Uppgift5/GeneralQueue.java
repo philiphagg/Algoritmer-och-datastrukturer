@@ -5,7 +5,11 @@ import Laboration1.Uppgift6.OrderedQueue;
 
 import java.util.Scanner;
 
-
+/**
+ * representation of a general queue
+ *
+ * @param <T>   for generic purposes
+ */
 public class GeneralQueue<T> {
     Node <T> last;
     int size;
@@ -15,22 +19,42 @@ public class GeneralQueue<T> {
         private T data;
     }
 
+    /**
+     * constructor for object creation
+     */
     public GeneralQueue() {
         Node<T> last = null;
         int size = 0;
     }
 
+    /**
+     * getter of <code>GeneralQueue</code> object
+     *
+     * @return last node in queue
+     */
     public Node<T> getLast() {
         return last;
     }
 
+    /**
+     * getter of <code>GeneralQueue</code> object
+     *
+     * @return size of queue
+     */
     public int getSize() {
         return size;
     }
-    public boolean isEmpty(){
+    public boolean isEmpty()
+    {
         return size == 0;
+
     }
 
+    /**
+     * Adds element to the queue
+     *
+     * @param data that user wants to add
+     */
     public void enqueue(T data){
         if(isEmpty()){
             last = new Node<>();
@@ -44,6 +68,13 @@ public class GeneralQueue<T> {
         size++;
 
     }
+
+    /**
+     * removes element from a specific index of the queue
+     *
+     * @param k index that element should be dequeued.
+     * @return  element that was removed
+     */
     public T dequeue(int k){
         if(k < 0 || k > size || isEmpty()) throw new IllegalArgumentException();
         int i;
@@ -70,6 +101,10 @@ public class GeneralQueue<T> {
         return data;
     }
 
+    /**
+     * String representation of the object
+     * @return the string representation
+     */
     public String toString(){
         StringBuilder sb = new StringBuilder();
         if(isEmpty())

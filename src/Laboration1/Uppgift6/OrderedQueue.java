@@ -7,16 +7,26 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
-
+/**
+ * representation of a queue that orders the elements of integers
+ * in ascending order.
+ */
 public class OrderedQueue implements Iterable {
     int size;
     Node head;
 
+    /**
+     * constructor for creation of <code>OrderedQueue</code>
+     */
     public OrderedQueue() {
         this.size = 0;
         this.head = null;
     }
 
+    /**
+     * iterator
+     * @return custom made iterator
+     */
     @Override
     public Iterator iterator() {
         return new OrderedQueueIterator();
@@ -37,16 +47,19 @@ public class OrderedQueue implements Iterable {
 
     }
 
-    public OrderedQueue(int size, Node head, Node tail) {
-        this.size = size;
-        this.head = head;
-    }
+    /**
+     * checks if queue is empty
+     * @return  if queue is empty
+     */
     public boolean isEmpty(){
         return size == 0;
     }
 
 
-
+    /**
+     * adds element to the queue
+     * @param data the element that will be added
+     */
     public void enqueue(int data){
 
         if(isEmpty()){
@@ -64,6 +77,12 @@ public class OrderedQueue implements Iterable {
         }
         size++;
     }
+
+    /**
+     * removes element from the queue at specific index
+     * @param k index
+     * @return  element that was removed
+     */
     public int dequeue(int k){
         if(k < 0 || k > size || isEmpty()) throw new IllegalArgumentException();
         int i;
@@ -158,6 +177,10 @@ public class OrderedQueue implements Iterable {
         }
     }
 
+    /**
+     * string representation of the queue
+     * @return the string representation
+     */
     public String toString(){
         StringBuilder sb = new StringBuilder();
         if(isEmpty())

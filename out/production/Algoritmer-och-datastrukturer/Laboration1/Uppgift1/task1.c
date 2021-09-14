@@ -20,7 +20,7 @@ void recursiveMethod(){
     putchar(ch);
 }
 /*
-
+iterative method that reverses user input
 */
 void iterativeMethod(){
     char *ch = (char*) malloc(100*sizeof(char));
@@ -46,10 +46,6 @@ int main(){
     printf("Enter some characters: \n");
     //recursiveMethod();
     iterativeMethod();
-
-
-
-
 
     return 0;
 }
