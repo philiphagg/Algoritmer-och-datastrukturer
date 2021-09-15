@@ -1,5 +1,5 @@
 ------ Read me ------>
-When executin each file:
+When executing each file:
 remove package line from the start of each file (java)
 <------ Read me ------
 
@@ -33,3 +33,17 @@ Eftersom vi inte kan kontrollera vad användaren vill lägga in för siffra. En 
 doubly linked circular list. Då detta innebär att vi alltid kan välja en kortare väg och i sämsta fall få
 ett bättre resultat. Jag valde att använda mig utav en singly linked list då jag tyckte det blev en roligare
 utmaning att arbeta med.
+
+Uppgift 7. 
+Algoritmen söker igenom hela strängen och kommer i värsta fall (och förväntat fall). Jag har valt att 
+Skapa filter som returnerar false ifall strängen är tom eller innehåller ett udda antal tecken. 
+Om vi väntar oss att det enbart kommer en sträng med paranteser kan den inte vara balanserad
+Om den innehåller ett udda antal tecken pga dess struktur. 
+Sedan kommer den att pusha alla öppningsparanteser till stacken. För att sedan jämföras med de återstående
+Tecknen. Därför kommer vi att poppa stacken och samtidigt jämföra med nästa tecken. Om det är en matchande stängnings-parantes
+Kommer vi att fortsätta loopen om inte, så kommer vi att returnera False. Vi returnerar om stacken är tom,
+Är den det har vi jämfört alla paranteser på ett framgångsrikt sätt. Om den inte är tom, betyder det att
+Parenteserna inte är matchande.
+
+Tidskomplexitet: n
+Minneskomplexitet: n/2
