@@ -3,6 +3,7 @@ void sort(int*, int);
 void swap(int*, int, int);
 void show(int*, int);
 void get_inv_count(int arr[], int);
+void reverse_array(int arr[], int);
 
 int swaps;
 
@@ -13,6 +14,13 @@ int main(){
 
     sort(arr,N);
     printf("\n number of swaps: %d", swaps);
+    printf("\n");
+    reverse_array(arr, N);
+
+    printf("reversed array: ");
+    for(int i = 0; i < N; i++){
+        printf("[%d]", arr[i]);
+    }
     printf("\n");
 
     return 0;
@@ -55,5 +63,21 @@ void show(int arr[], int N){
         printf("[%d]", arr[i]);
     }
     printf("\n");
+}
+
+void reverse_array(int arr[], int N){
+    int i = 0;
+    int j = N - 1;
+    int temporary_value;
+
+    for(int i = 0; i < N; i++){
+        arr[i] *= -1;
+    }
+
+    sort(arr, N);
+
+    for(int i = 0; i < N; i++){
+        arr[i] *= -1;
+    }
 }
 
