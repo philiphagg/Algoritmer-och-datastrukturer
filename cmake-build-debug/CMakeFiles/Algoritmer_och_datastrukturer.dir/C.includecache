@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/philiphagg/Documents/AlgorithmsDataSructures/Algoritmer och datastrukturer/Algoritmer-och-datastrukturer/out/production/Algoritmer-och-datastrukturer/Laboration1/Uppgift1/task1.c
+stdio.h
+-
+stdlib.h
+-
+
+/Users/philiphagg/Documents/AlgorithmsDataSructures/Algoritmer och datastrukturer/Algoritmer-och-datastrukturer/src/Laboration1/Uppgift1/task1.c
+stdio.h
+-
+stdlib.h
+-
+
+/Users/philiphagg/Documents/AlgorithmsDataSructures/Algoritmer och datastrukturer/Algoritmer-och-datastrukturer/src/Laboration2/Uppgift1/uppgift1.c
+stdio.h
+-
+
+/Users/philiphagg/Documents/AlgorithmsDataSructures/Algoritmer och datastrukturer/Algoritmer-och-datastrukturer/src/Laboration2/Uppgift3/inPlace.c
+stdio.h
+-
+

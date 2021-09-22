@@ -17,7 +17,7 @@ public class CheckParentheses {
         Scanner s = new Scanner(System.in);
         String parentheses = s.nextLine();
         */
-        String parentheses = "";
+        String parentheses = "()()";
         System.out.println(check(parentheses));
 
     }
@@ -35,7 +35,7 @@ public class CheckParentheses {
         for(int i = 0; i < string.length(); i++){
             if(string.charAt(i) == '(' || string.charAt(i) == '[' || string.charAt(i) == '{')
                 stack.push(string.charAt(i));
-            else{
+            else{ // här kan vi byta till continue
                 if(!stack.isEmpty())
                     ch = stack.pop();
                 if((        (ch == '(' && string.charAt(i) == ')')
