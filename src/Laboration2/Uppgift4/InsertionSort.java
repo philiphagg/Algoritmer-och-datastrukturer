@@ -9,5 +9,9 @@ public class InsertionSort {
         Integer [] arr = {12,3,45,54,23443,432,234,412,123};
         Insertion.sort(arr,0,arr.length);
 
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i]+ " ");
+        }
+
     }
 }
