@@ -1,17 +1,31 @@
 package Laboration2.Uppgift4;
 
 import edu.princeton.cs.algs4.Insertion;
+import edu.princeton.cs.algs4.Merge;
+import edu.princeton.cs.algs4.StdIn;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class InsertionSort {
-    public static void main(String[] args) {
-        Integer [] arr = {12,3,45,54,23443,432,234,412,123};
-        Insertion.sort(arr,0,arr.length);
+    public static void main(String[] args) throws FileNotFoundException {
+        String filePath = "src/InputFiles/inputfile1000.txt";
 
-        for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i]+ " ");
-        }
+        Scanner in = new Scanner(new FileReader(filePath));
 
+        int size = Integer.parseInt(in.nextLine());
+        Integer[] numbers = new Integer[size];
+
+        for(int i = 0; i < numbers.length; i++)
+            numbers[i] = in.nextInt();
+
+        long start = System.currentTimeMillis();
+        Insertion.sort(numbers);
+        long end = System.currentTimeMillis();
+
+        System.out.println("Merge sort time : "+(end-start)+ "ms; input size: "+size);
+        System.out.println(Arrays.toString(numbers));
     }
 }

@@ -1,0 +1,13 @@
+Algoritm,tid ms, antal element
+Quicksort,2,100,
+insertionSort,1,100,
+Mergesort,1,100,
+Quicksort,2,1000,
+insertionSort,42,1000,
+Mergesort,2,1000,
+Quicksort,5,10000,
+insertionSort,323,10000,
+Mergesort,6,10000,
+Quicksort,67,100000,
+insertionSort,15332,100000,
+Mergesort,92,100000,
