@@ -27,10 +27,9 @@ public class L2U4 {
             for(int j = 0; j < 1 ;j++){
             System.out.println(i);
                 writer.write(quickSort(filenames[i]));
-                //writer.write(insertionSort(filenames[i]));
+                writer.write(insertionSort(filenames[i]));
                 writer.write(mergeSort(filenames[i]));
                 System.out.println("i:"+i+"j:"+j);
-
             }
         }
 

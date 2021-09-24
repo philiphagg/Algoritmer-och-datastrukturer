@@ -17,7 +17,7 @@ void positive_negative_in_place(int arr[], int N){
         current = arr[i];
 
         j = i - 1;
-        while(current < 0 && j >= 0 && arr[j] > 0){
+        while(current <= 0 && j >= 0 && arr[j] >= 0){
             arr[j+1] = arr[j];
             j--;
 
@@ -29,7 +29,7 @@ void positive_negative_in_place(int arr[], int N){
 
 
 int main(){
-    int arr[] = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
+    int arr[] = {-12, 11, -13, -5, 6, -7, 5, 0, -6};
     int N = sizeof(arr) / sizeof(int);
     print_array(arr,N);
     positive_negative_in_place(arr, N);
