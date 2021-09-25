@@ -22,6 +22,9 @@ public class L2U4 {
                             "inputfile10000.txt", "inputfile100000.txt",
                             "inputfile1000000.txt", "inputfile10000000.txt", "inputfile100000000.txt"};
 
+
+
+
         writer.write("Algoritm,tid ms, antal element\n");
         for(int i = 6; i < filenames.length;i++){
             for(int j = 0; j < 1 ;j++){
@@ -40,9 +43,9 @@ public class L2U4 {
     }
 
     public static String quickSort(String filename) throws FileNotFoundException {
-        String filePath = "src/InputFiles/"+filename;
-        String alogName = "Quicksort";
 
+        String alogName = "Quicksort";
+        String filePath = "src/InputFiles/"+filename;
 
         Scanner in = new Scanner(new FileReader(filePath));
         int size = Integer.parseInt(in.nextLine());

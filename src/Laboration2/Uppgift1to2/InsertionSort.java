@@ -1,4 +1,4 @@
-package Laboration2.Uppgift1;
+package Laboration2.Uppgift1to2;
 
 public class InsertionSort {
     private int swaps;

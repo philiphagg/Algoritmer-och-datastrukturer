@@ -13,9 +13,9 @@ public class QuickSort {
         private static long time;
 
     public static void main(String[] args) throws IOException {
-        FileWriter writer = new FileWriter("src/Laboration2/Uppgift5/1M.csv");
+        //FileWriter writer = new FileWriter("src/Laboration2/Uppgift5/1M.csv");
 
-        String filePath = "src/InputFiles/1M.txt";
+        String filePath = "src/InputFiles/1m.txt";
         Scanner in = new Scanner(new FileReader(filePath));
         int size = Integer.parseInt(in.nextLine());
         Integer[] numbers = new Integer[size];
@@ -23,9 +23,14 @@ public class QuickSort {
         for(int i = 0; i < numbers.length; i++)
             numbers[i] = in.nextInt();
 
+        long start = System.currentTimeMillis();
         sort(numbers);
+        long end = System.currentTimeMillis();
 
+        time = end-start;
+        //sort(arr);
         sorted = isSorted(numbers,0,numbers.length-1);
+        System.out.println(time);
         System.out.println(sorted);
     }
 

@@ -7,10 +7,20 @@ void get_inv_count(int arr[], int);
 int swaps;
 
 int main(){
-    int arr[] ={1,2,5,3,4,0};
-    int N = sizeof(arr)/sizeof(int);
-    get_inv_count(arr,N);
+    //int arr[] ={1,2,5,3,4,0};
+    //int N = sizeof(arr)/sizeof(int);
+    int N;
 
+    printf("Enter size of array: ");
+    scanf("%d",&N);
+    int arr[N];
+    int i = 0;
+
+    while(i++ < N){
+        printf("Enter value %d: ", i);
+        scanf("%d", &arr[i-1]);
+    }
+    get_inv_count(arr,N);
     sort(arr,N);
     printf("\n number of swaps: %d", swaps);
     printf("\n");
