@@ -1,14 +1,17 @@
+//program that sors negative elements on low indices
+//positive indexes on high indices
+
 #include <stdio.h>
 
 
-
+// prints the array
 void print_array(int arr[],int n){
     for(int i = 0; i < n; i++){
         printf("%d, ", arr[i]);
     }
     printf("\n");
 }
-
+// function that sorts
 void positive_negative_in_place(int arr[], int N){
     int i = 0;
     int j, current;

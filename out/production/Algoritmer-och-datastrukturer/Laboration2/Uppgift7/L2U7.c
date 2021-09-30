@@ -6,7 +6,8 @@ void get_inv_count(int arr[], int);
 void reverse_array(int arr[], int);
 
 int swaps;
-
+// program responsible for reversing an array with 2n extra time.
+// Main function that drives the program
 int main(){
     int arr[] ={1,2,5,3,4,0};
     int N = sizeof(arr)/sizeof(int);
@@ -26,7 +27,7 @@ int main(){
     return 0;
 }
 
-//timecomplexity n(n-1)/2
+// Function that implements insertion sort
 void sort(int arr[], int N){
     int swaps = 0;
     for(int i = 1; i < N; i++){
@@ -36,7 +37,7 @@ void sort(int arr[], int N){
         }
     }
 }
-
+// Function that swaps elements
 void swap(int arr[], int j, int i){
     int placeHoder = arr[i];
     arr[i] = arr[j];
@@ -44,7 +45,8 @@ void swap(int arr[], int j, int i){
     swaps++;
 }
 
-//Time complexity n^2 
+//Time complexity n^2
+//Function that count inversions
 void get_inv_count(int arr[], int N){
     int inversions = 0;
     for(int i = 0; i < N -1; i++){
@@ -57,7 +59,7 @@ void get_inv_count(int arr[], int N){
     }
     printf("\nNumber of inversions: %d\n", inversions);
 }
-
+//Prints the array
 void show(int arr[], int N){
     for(int i = 0; i < N; i++){
         printf("[%d]", arr[i]);
@@ -65,6 +67,7 @@ void show(int arr[], int N){
     printf("\n");
 }
 
+// Reverses the array
 void reverse_array(int arr[], int N){
     int i = 0;
     int j = N - 1;
@@ -80,4 +83,3 @@ void reverse_array(int arr[], int N){
         arr[i] *= -1;
     }
 }
-

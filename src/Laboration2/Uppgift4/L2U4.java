@@ -12,6 +12,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+
+/**
+ * Class that compares execution time for three sorting algorithms, quicksort,mergesort,insertionsort
+ * takes input as a file and tests all of them iterative. Used princetons implementation
+ * to get the most accurate and fair comparisson as possible.
+ *
+ */
 public class L2U4 {
 
 
@@ -42,6 +49,14 @@ public class L2U4 {
 
     }
 
+    /**
+     * princetons implementation of quicksort that reads input array from file
+     *
+     *
+     * @param filename  name of the file that shall be used as input
+     * @return          a string that will be written to file
+     * @throws FileNotFoundException    throws exception if file not found
+     */
     public static String quickSort(String filename) throws FileNotFoundException {
 
         String alogName = "Quicksort";
@@ -64,7 +79,14 @@ public class L2U4 {
 
     }
 
-
+    /**
+     * princetons implementation of Merge sort that reads input array from file
+     *
+     *
+     * @param filename  name of the file that shall be used as input
+     * @return          a string that will be written to file
+     * @throws FileNotFoundException    throws exception if file not found
+     */
     public static String mergeSort(String filename) throws FileNotFoundException {
         String filePath = "src/InputFiles/"+filename;
         String alogName = "Mergesort";
@@ -85,6 +107,14 @@ public class L2U4 {
 
     }
 
+    /**
+     * princetons implementation of Insertion sort that reads input array from file
+     *
+     *
+     * @param filename  name of the file that shall be used as input
+     * @return          a string that will be written to file
+     * @throws FileNotFoundException    throws exception if file not found
+     */
     public static String insertionSort(String filename) throws FileNotFoundException {
         String filePath = "src/InputFiles/"+filename;
         String alogName = "insertionSort";

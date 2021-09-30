@@ -1,0 +1,3 @@
+Algoritm,tid ms, antal element
+Quicksort,54304,100000000,
+Mergesort,58632,100000000,

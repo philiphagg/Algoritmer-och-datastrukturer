@@ -7,13 +7,25 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+
+/**
+ * Class responsible for quicksort, implementation with inspiration from princeton
+ *
+ *
+ */
 public class QuickSort {
         private static int PARTITION;
         private static boolean sorted;
         private static long time;
 
+    /**
+     * Main method that reads and writes to file and calls the sorting method
+     *
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
-        //FileWriter writer = new FileWriter("src/Laboration2/Uppgift5/1M.csv");
 
         String filePath = "src/InputFiles/1m.txt";
         Scanner in = new Scanner(new FileReader(filePath));
@@ -28,19 +40,28 @@ public class QuickSort {
         long end = System.currentTimeMillis();
 
         time = end-start;
-        //sort(arr);
         sorted = isSorted(numbers,0,numbers.length-1);
         System.out.println(time);
         System.out.println(sorted);
     }
 
-
+    /**
+     * shuffles the array and calls the recursive sorting method
+     * @param a     array that will be shuffled and sorted
+     */
     public static void sort(Integer[] a) {
         StdRandom.shuffle(a);
         sort(a, 0, a.length - 1);
 
     }
 
+    /**
+     * Method that sorts partitions of the array recursivly.
+     *
+     * @param a     Array that will  be sorted
+     * @param lo    left index
+     * @param hi    right index
+     */
     private static void sort(Integer[] a, int lo, int hi) {
         if (hi <= lo) return;
         int j = partition(a, lo, hi);
@@ -49,35 +70,39 @@ public class QuickSort {
     }
 
 
-
-    // partition the subarray a[lo..hi] so that a[lo..j-1] <= a[j] <= a[j+1..hi]
-    // and return the index j.
+    /**
+     * Partitioning and swapping elements.
+     * @param a     array that will be sorted
+     * @param lo    left index
+     * @param hi    right index
+     * @return      returns partition index
+     */
     private static int partition(Integer[] a, int lo, int hi) {
         int i = lo;
         int j = hi + 1;
         Integer v = a[lo];
         while (true) {
 
-            // find item on lo to swap
+
             while (less(a[++i], v)) {
                 if (i == hi) break;
             }
 
-            // find item on hi to swap
+
             while (less(v, a[--j])) {
-                if (j == lo) break;      // redundant since a[lo] acts as sentinel
+                if (j == lo) break;
             }
 
-            // check if pointers cross
+
             if (i >= j) break;
 
             exch(a, i, j);
         }
 
-        // put partitioning item v at a[j]
+
         exch(a, lo, j);
 
-        // now, a[lo .. j-1] <= a[j] <= a[j+1 .. hi]
+
         return j;
     }
 
@@ -94,6 +119,14 @@ public class QuickSort {
         a[i] = a[j];
         a[j] = swap;
     }
+
+    /**
+     * method for debugging, checks if array was sorted
+     * @param a     array that shall be checked
+     * @param lo    left index
+     * @param hi    right index
+     * @return
+     */
     private static boolean isSorted(Integer[] a, int lo, int hi){
         for (int i = lo + 1; i <= hi; i++)
             if (a[i] < a[i-1]) return false;
