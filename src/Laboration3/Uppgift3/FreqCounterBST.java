@@ -1,6 +1,5 @@
 package Laboration3.Uppgift3;
 
-import Laboration3.Uppgift2.BinarySearchST;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 

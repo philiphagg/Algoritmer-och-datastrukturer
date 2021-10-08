@@ -13,10 +13,6 @@ public class L3U6<Key,Value> {
         System.setIn(new FileInputStream("src/Laboration3/Uppgift1/polished-gutenberg.txt"));
         SeparateChainingHashST<String,Integer> st = new SeparateChainingHashST<>();
 
-
-
-
-
         InsertKeys(st);
         String inputWord;
         Integer wordValue;

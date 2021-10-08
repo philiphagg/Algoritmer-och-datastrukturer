@@ -22,6 +22,7 @@ public class BinarySearchST <Key extends Comparable<Key>, Value> {
     public int getSize(){
         return size;
     }
+
     public int rank(Key key){
         int lo = 0;
         int hi = size - 1;

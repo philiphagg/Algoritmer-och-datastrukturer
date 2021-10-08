@@ -13,6 +13,7 @@ public class L3U4 {
     private static long endInseartion;
     private static long startSearch;
     private static long endSearch;
+
     public static void main(String[] args) throws FileNotFoundException {
         BSST();
         //BST();
