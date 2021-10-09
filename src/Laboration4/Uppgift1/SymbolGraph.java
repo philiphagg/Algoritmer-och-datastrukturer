@@ -6,8 +6,8 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 public class SymbolGraph {
-     ST<String, Integer> st;  // string -> index
-     String[] keys;           // index  -> string
+     public ST<String, Integer> st;  // string -> index
+     public String[] keys;           // index  -> string
      Graphi graph;             // the underlying graph
      static final String NEWLINE = System.getProperty("line.separator");
 
