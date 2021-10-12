@@ -1,5 +1,6 @@
 package Laboration4.Uppgift1;
 
+import Laboration4.Uppgift4.Digraph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stack;
 
@@ -21,6 +22,17 @@ public class DFS {
         validateVertex(s);
         dfs(G,s);
     }
+
+
+    public DFS(Digraph G, int s){
+        this.s = s;
+        edgeTo = new int[G.V()];
+        marked = new boolean[G.V()];
+        validateVertex(s);
+        dfs(G,s);
+    }
+
+
 
     public boolean hasPathTo(int v) {
         validateVertex(v);
@@ -45,6 +57,17 @@ public class DFS {
             }
         }
     }
+
+    void dfs(Digraph G, int v) {
+        marked[v] = true;
+        for(int w : G.adj(v)){
+            if(!marked[w]){
+                edgeTo[w] = v;
+                dfs(G,w);
+            }
+        }
+    }
+
      void validateVertex(int v) {
         int V = marked.length;
         if (v < 0 || v >= V)

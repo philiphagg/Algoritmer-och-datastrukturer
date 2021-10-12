@@ -41,7 +41,6 @@ public class L4U1Main {
 
     private static void printAllPaths(SymbolGraph sg, Graphi G, DFS d, int s) {
 
-
         for (int v = 0; v < G.getV(); v++) {
             if (d.hasPathTo(v)) {
                 StdOut.printf("%s to %s:  ", sg.keys[s], sg.keys[v]);
@@ -61,4 +60,3 @@ public class L4U1Main {
 
 
 }
-
